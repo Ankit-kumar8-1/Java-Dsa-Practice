@@ -1,6 +1,5 @@
 package DSALeetcode;
 
-import java.util.Set;
 
 public class MaximumNumberofVowelsinaSubstringofGivenLength {
     public  static int maxVowels(String s, int k){
