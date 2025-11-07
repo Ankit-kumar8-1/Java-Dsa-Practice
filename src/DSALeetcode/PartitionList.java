@@ -31,4 +31,8 @@ public class PartitionList {
         before.next6 = afterlist.next6;
         return  beforelist.next6;
     }
+
+    public static void main(String[] args) {
+
+    }
 }
