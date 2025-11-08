@@ -1,4 +1,4 @@
-package DSALeetcode;
+package DSALeetcode.TwoPointer;
 
 public class RemoveDuplicatesfromSortedArrayII {
     public  static  int returnlen(int [] nums){
