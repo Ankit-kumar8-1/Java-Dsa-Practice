@@ -43,5 +43,6 @@ public class IntersectionofTwoLinkedLists {
         }
 
         return headA;
+
     }
 }

@@ -1,8 +1,12 @@
 package DSALeetcode;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class MinimumNumberofOperationstoMakeAllArrayElementsEqualtoone {
     public  static  int findOperations(int nums[]){
         int preOne = presentOne(nums);
+
         if(preOne>0){
             return nums.length - preOne;
         }else {
@@ -45,5 +49,7 @@ public class MinimumNumberofOperationstoMakeAllArrayElementsEqualtoone {
 
         int nums[] = {6,10,15};
         System.out.println(findOperations(nums));
+
+        
     }
 }
