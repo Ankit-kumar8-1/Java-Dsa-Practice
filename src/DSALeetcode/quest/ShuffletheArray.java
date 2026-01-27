@@ -1,4 +1,4 @@
-package DSALeetcode.quert;
+package DSALeetcode.quest;
 
 public class ShuffletheArray {
     public  static  int[]  shuffle(int nums[], int n){
