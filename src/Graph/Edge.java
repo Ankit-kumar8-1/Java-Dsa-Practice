@@ -10,4 +10,9 @@ public class Edge {
         this.dest=dest;
         this.wt=wt;
     }
+
+    Edge(int src,int dest){
+        this.src=src;
+        this.dest=dest;
+    }
 }
