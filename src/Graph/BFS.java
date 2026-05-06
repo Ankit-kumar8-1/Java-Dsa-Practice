@@ -36,18 +36,17 @@ public class BFS {
         graph[6].add(new Edge(6,5));
     }
 
-    public  static void  gfs(ArrayList<Edge> graph[] , int vertex){
+    public  static  void gfs(ArrayList<Edge> graph[], int vertex, boolean visited[],int start){
         Queue<Integer> queue = new LinkedList<>();
-        boolean visited[] = new boolean[vertex];
-        queue.add(0);
+
+        queue.add(start);
         while (!queue.isEmpty()){
-            int curr = queue.remove();
+            int curr =  queue.remove();
 
             if (visited[curr] == false){
-                System.out.print(curr+" ");
+                System.out.println(curr + " ");
                 visited[curr] = true;
-
-                for (int i = 0 ;i<graph[curr].size();i++){
+                for (int i = 0;i< graph[curr].size();i++){
                     Edge e = graph[curr].get(i);
                     queue.add(e.dest);
                 }
@@ -57,10 +56,16 @@ public class BFS {
 
     public static void main(String[] args) {
         int vertex = 7 ;
+
         ArrayList<Edge> graph[] =  new ArrayList[vertex];
         createGraph(graph);
+        boolean visited[] = new boolean[vertex];
 
-        gfs(graph,vertex);
+        for(int  i = 0 ;i< vertex;i++){
+            if (visited[i]==false){
+                gfs(graph,vertex,visited,i);
+            }
+        }
 
 
 
