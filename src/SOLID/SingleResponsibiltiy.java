@@ -10,5 +10,9 @@ public class SingleResponsibiltiy {
         Map<String,String>  callApi = login.register("ankit@gmail.com","1234556");
 
         System.out.print(callApi);
+
+        Bird penguin  = new penguin();
+        penguin.fly();
     }
 }
+
