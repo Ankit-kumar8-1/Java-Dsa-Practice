@@ -9,7 +9,7 @@ public class BFS {
 
 
 
-    public  static  void gfs(ArrayList<Edge> graph[], boolean visited[],int start){
+    public  static  void bfs(ArrayList<Edge> graph[], boolean visited[],int start){
         Queue<Integer> queue = new LinkedList<>();
 
         queue.add(start);
@@ -38,7 +38,7 @@ public class BFS {
 
         for(int  i = 0 ;i< vertex;i++){
             if (visited[i]==false){
-                gfs(graph,visited,i);
+                bfs(graph,visited,i);
             }
         }
 

@@ -1,6 +1,8 @@
 package Graph;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.Queue;
 
 public class CreateGraph {
 
@@ -31,5 +33,52 @@ public class CreateGraph {
         graph[5].add(new Edge(5,6));
 
         graph[6].add(new Edge(6,5));
+    }
+
+    private static  void  createGraph2(ArrayList<Edge> graph[]){
+        for (int i = 0;i< graph.length;i++){
+            graph[i]=new ArrayList<>();
+        }
+
+        graph[0].add(new Edge(0,1));
+        graph[0].add(new Edge(0,2));
+        graph[1].add(new Edge(1,0));
+        graph[1].add(new Edge(1,3));
+        graph[2].add(new Edge(2,0));
+        graph[3].add(new Edge(3,1));
+
+    }
+
+    private   static  void  bfs(ArrayList<Edge> graph[] , int vertex){
+        Queue<Integer> queue = new LinkedList<>();
+        boolean vis[] = new boolean[graph.length];
+        queue.add(0);
+
+        while (!queue.isEmpty()){
+            int curr = queue.remove();
+            if (!vis[curr]){
+                System.out.println(curr);
+                vis[curr]=true;
+                for (int i = 0 ;i<graph[curr].size();i++){
+                    Edge e =  graph[curr].get(i);
+                    queue.add(e.dest);
+                }
+            }
+        }
+    }
+
+    public static void main(String[] args) {
+        int vertex = 4;
+        ArrayList<Edge> graph[]= new ArrayList[vertex];
+        createGraph2(graph);
+
+//        for (int i = 0;i<4;i++){
+//            ArrayList<Integer> sol = new ArrayList<>();
+//            for (Edge e : graph[i]){
+//                sol.add(e.dest);
+//            }
+//            System.out.println(i + " : "+ sol);
+//        }
+        bfs(graph,vertex);
     }
 }
