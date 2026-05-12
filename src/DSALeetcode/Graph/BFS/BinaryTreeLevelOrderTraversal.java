@@ -24,27 +24,36 @@ public class BinaryTreeLevelOrderTraversal {
         List<List<Integer>> sol = new ArrayList<>();
         Queue<Node> queue = new LinkedList<>();
         queue.add(root);
+        boolean leftToRight = true;
 
         while (!queue.isEmpty()){
             int size = queue.size();
-            List<Integer> currLevel = new ArrayList<>();
+            LinkedList<Integer>  level = new LinkedList<>();
 
-            for (int i = 0 ;i< size;i++){
+            for (int i = 0; i< size; i++){
                 Node curr = queue.remove();
-                currLevel.add(curr.val);
+
+                if (leftToRight){
+                    level.addLast(curr.val);
+                }else {
+                    level.addFirst(curr.val);
+                }
 
                 if (curr.left != null){
                     queue.add(curr.left);
                 }
+
                 if (curr.right != null){
                     queue.add(curr.right);
                 }
             }
-            sol.add(currLevel);
+
+            sol.add(level);
+            leftToRight = ! leftToRight;
         }
 
         return sol;
-     }
+    }
 
     public static void main(String[] args) {
         Node root = createTree();
