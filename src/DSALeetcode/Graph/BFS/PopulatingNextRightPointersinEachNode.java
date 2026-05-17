@@ -33,7 +33,6 @@ public class PopulatingNextRightPointersinEachNode {
             Node lastNode = q.remove();
             lastNode.next = null;
         }
-
         return root;
     }
 
